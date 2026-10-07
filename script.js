@@ -4,7 +4,7 @@ const header = document.querySelector(".site-header");
 const backToTop = document.querySelector(".back-to-top");
 const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
-const contactEmail = "YOUR_EMAIL";
+const contactEmail = "dharunpragathesh4@gmail.com";
 
 function closeNavigation() {
   menuButton.setAttribute("aria-expanded", "false");
@@ -73,26 +73,9 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
 });
 
-if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-  const light = document.querySelector(".ambient-light");
-  let pointerFrame = 0;
-  window.addEventListener("pointermove", (event) => {
-    if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
-    pointerFrame = window.requestAnimationFrame(() => {
-      light.style.left = `${event.clientX}px`;
-      light.style.top = `${event.clientY}px`;
-    });
-  }, { passive: true });
-}
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
-  if (contactEmail === "YOUR_EMAIL" || !contactEmail.includes("@")) {
-    formStatus.textContent = "Message not sent: replace YOUR_EMAIL in script.js with a real email address first.";
-    return;
-  }
-
   const data = new FormData(form);
   const subject = `Portfolio message from ${data.get("name")}`;
   const body = `${data.get("message")}\n\nFrom: ${data.get("name")}\nReply to: ${data.get("email")}`;
