@@ -47,7 +47,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow-divider { color: var(--faint); }
 h1, h2, h3, p { margin-top: 0; }
 .hero h1 { margin: 30px 0 28px; font-size: clamp(52px, 7vw, 88px); font-weight: 600; letter-spacing: -.065em; line-height: 1.08; white-space: nowrap; }
-.gradient-text { color: #d4e0ff; background: linear-gradient(110deg, #e0e9ff 3%, #adc2f3 55%, #a6d9cf 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.gradient-text { display: inline-block; padding-right: 0.25em; margin-right: -0.25em; color: #d4e0ff; background: linear-gradient(110deg, #e0e9ff 3%, #adc2f3 55%, #a6d9cf 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-statement { display: grid; max-width: 650px; gap: 10px; margin: 0 0 35px; color: #e1e6ef; font-size: clamp(16px, 1.8vw, 20px); letter-spacing: -.02em; line-height: 1.65; }
 .hero-statement span + span { color: var(--muted); font-size: .91em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
