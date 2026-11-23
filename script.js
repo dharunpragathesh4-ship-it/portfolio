@@ -80,5 +80,5 @@ form.addEventListener("submit", (event) => {
   const subject = `Portfolio message from ${data.get("name")}`;
   const body = `${data.get("message")}\n\nFrom: ${data.get("name")}\nReply to: ${data.get("email")}`;
   window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  formStatus.textContent = "Your email app should open with the message ready to send.";
+  if (formStatus) formStatus.textContent = "Opening draft in your email app...";
 });
